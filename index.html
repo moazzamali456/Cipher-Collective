@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="fevicon1.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>CipherCollective</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="responsive.css" rel="stylesheet" />
+
+<style>
+    .socket{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 50%;
+        margin-left: -100px;
+        top: 50%;
+        margin-top: -100px;
+      }
+      
+      .hex-brick{
+        background: #ABF8FF;
+        width: 30px;
+        height: 17px;
+        position: absolute;
+        top: 5px;
+        animation-name: fade;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+      }
+      
+      .h2{
+        transform: rotate(60deg);
+        -webkit-transform: rotate(60deg);
+      }
+      
+      .h3{
+        transform: rotate(-60deg);
+        -webkit-transform: rotate(-60deg);
+      }
+      
+      .gel{
+        height: 30px;
+        width: 30px;  
+        transition: all .3s;
+        -webkit-transition: all .3s;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+      
+      .center-gel{
+        margin-left: -15px;
+        margin-top: -15px;
+        
+        animation-name: pulse;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        -webkit-animation-name: pulse;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+      }
+      
+      .c1{
+        margin-left: -47px;
+        margin-top: -15px;
+      }
+      
+      .c2{
+        margin-left: -31px;
+        margin-top: -43px;
+      }
+      
+      .c3{
+        margin-left: 1px;
+        margin-top: -43px;
+      }
+      
+      .c4{
+        margin-left: 17px;
+        margin-top: -15px;
+      }
+      .c5{
+        margin-left: -31px;
+        margin-top: 13px;
+      }
+      
+      .c6{
+        margin-left: 1px;
+        margin-top: 13px;
+      }
+      
+      .c7{
+        margin-left: -63px;
+        margin-top: -43px;
+      }
+      
+      .c8{
+        margin-left: 33px;
+        margin-top: -43px;
+      }
+      
+      .c9{
+        margin-left: -15px;
+        margin-top: 41px;
+      }
+      
+      .c10{
+        margin-left: -63px;
+        margin-top: 13px;
+      }
+      
+      .c11{
+        margin-left: 33px;
+        margin-top: 13px;
+      }
+      
+      .c12{
+        margin-left: -15px;
+        margin-top: -71px;
+      }
+      
+      .c13{
+        margin-left: -47px;
+        margin-top: -71px;
+      }
+      
+      .c14{
+        margin-left: 17px;
+        margin-top: -71px;
+      }
+      
+      .c15{
+        margin-left: -47px;
+        margin-top: 41px;
+      }
+      
+      .c16{
+        margin-left: 17px;
+        margin-top: 41px;
+      }
+      
+      .c17{
+        margin-left: -79px;
+        margin-top: -15px;
+      }
+      
+      .c18{
+        margin-left: 49px;
+        margin-top: -15px;
+      }
+      
+      .c19{
+        margin-left: -63px;
+        margin-top: -99px;
+      }
+      
+      .c20{
+        margin-left: 33px;
+        margin-top: -99px;
+      }
+      
+      .c21{
+        margin-left: 1px;
+        margin-top: -99px;
+      }
+      
+      .c22{
+        margin-left: -31px;
+        margin-top: -99px;
+      }
+      
+      .c23{
+        margin-left: -63px;
+        margin-top: 69px;
+      }
+      
+      .c24{
+        margin-left: 33px;
+        margin-top: 69px;
+      }
+      
+      .c25{
+        margin-left: 1px;
+        margin-top: 69px;
+      }
+      
+      .c26{
+        margin-left: -31px;
+        margin-top: 69px;
+      }
+      
+      .c27{
+        margin-left: -79px;
+        margin-top: -15px;
+      }
+      
+      .c28{
+        margin-left: -95px;
+        margin-top: -43px;
+      }
+      
+      .c29{
+        margin-left: -95px;
+        margin-top: 13px;
+      }
+      
+      .c30{
+        margin-left: 49px;
+        margin-top: 41px;
+      }
+      
+      .c31{
+        margin-left: -79px;
+        margin-top: -71px;
+      }
+      
+      .c32{
+        margin-left: -111px;
+        margin-top: -15px;
+      }
+      
+      .c33{
+        margin-left: 65px;
+        margin-top: -43px;
+      }
+      
+      .c34{
+        margin-left: 65px;
+        margin-top: 13px;
+      }
+      
+      .c35{
+        margin-left: -79px;
+        margin-top: 41px;
+      }
+      
+      .c36{
+        margin-left: 49px;
+        margin-top: -71px;
+      }
+      
+      .c37{
+        margin-left: 81px;
+        margin-top: -15px;
+      }
+      
+      .r1{
+        animation-name: pulse;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-delay: .2s;
+        -webkit-animation-name: pulse;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-delay: .2s;
+      }
+      
+      .r2{
+        animation-name: pulse;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-delay: .4s;
+        -webkit-animation-name: pulse;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-delay: .4s;
+      }
+      
+      .r3{
+        animation-name: pulse;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-delay: .6s;
+        -webkit-animation-name: pulse;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-delay: .6s;
+      }
+      
+      .r1 > .hex-brick{
+        animation-name: fade;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-delay: .2s;
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-delay: .2s;
+      }
+      
+      .r2 > .hex-brick{
+        animation-name: fade;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-delay: .4s;
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-delay: .4s;
+      }
+      
+      .r3 > .hex-brick{
+        animation-name: fade;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-delay: .6s;
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-delay: .6s;
+      }
+      
+      
+      @keyframes pulse{
+        0%{
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+        
+        50%{
+          -webkit-transform: scale(0.01);
+          transform: scale(0.01);
+        }
+        
+        100%{
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+      
+      @keyframes fade{
+        0%{
+          background: #ABF8FF;
+        }
+        
+        50%{
+          background: #90BBBF;
+        }
+        
+        100%{
+          background: #ABF8FF;
+        }
+      }
+      
+      @-webkit-keyframes pulse{
+        0%{
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+        
+        50%{
+          -webkit-transform: scale(0.01);
+          transform: scale(0.01);
+        }
+        
+        100%{
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+      
+      @-webkit-keyframes fade{
+        0%{
+          background: #ABF8FF;
+        }
+        
+        50%{
+          background: #389CA6;
+        }
+        
+        100%{
+          background: #ABF8FF;
+        }
+      }
+</style>
+
+</head>
+
+<body onload="myFunction()">
+  <div  id="preloder" style="background-color: rgb(42,53,77); position: fixed; width: 100%; padding-left: 450px; z-index: 100; height: 100vh; align-items: center; display: flex;">
+    <div class="socket">
+      <div class="gel center-gel">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c1 r1">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c2 r1">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c3 r1">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c4 r1">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c5 r1">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c6 r1">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      
+      <div class="gel c7 r2">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      
+      <div class="gel c8 r2">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c9 r2">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c10 r2">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c11 r2">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c12 r2">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c13 r2">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c14 r2">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c15 r2">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c16 r2">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c17 r2">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c18 r2">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c19 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c20 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c21 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c22 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c23 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c24 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c25 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c26 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c28 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c29 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c30 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c31 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c32 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c33 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c34 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c35 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c36 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      <div class="gel c37 r3">
+        <div class="hex-brick h1"></div>
+        <div class="hex-brick h2"></div>
+        <div class="hex-brick h3"></div>
+      </div>
+      
+    </div>
+   </div>
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>CipherColective</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about"> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#service">Services</a>
+              </li>
+             
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact Us</a>
+              </li>
+            </ul>
+            <div class="quote_btn-container">
+             
+              <a href="Tel:+923065762664">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call : +92 324 7298867
+                </span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                      World Class Cyber Security
+
+                    </h1>
+                    <p>
+                      Modern Information Protect From Hackers
+                      Cybersecurity is the protection from the theft to protect of our computer systems and networks or being damaged of our hardware and software./backgroud image in source code....
+                       </p>
+                    <div class="btn-box">
+                      <a href="#service" class="btn-1">
+                        Read More
+                      </a>
+                      <a href="#contact" class="btn-2">
+                        Contact Us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class=" col-lg-10 mx-auto">
+                      <div class="img-box">
+                        <img src="slider-img.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                      Providing Pentesting
+                    </h1>
+                    <p>
+                      Penetration testers are security professionals skilled in the art of ethical hacking, which is the use of hacking tools and techniques to fix security weaknesses rather than cause harm. Companies hire pen testers to launch simulated attacks against their apps, networks, and other assets. By staging fake attacks, pen testers help security teams uncover critical security vulnerabilities and improve overall security posture
+                      <div class="btn-box">
+                      <a href="#service" class="btn-1">
+                        Read More
+                      </a>
+                      <a href="#contact" class="btn-2">
+                        Contact Us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class=" col-lg-10 mx-auto">
+                      <div class="img-box">
+                        <img src="slider-img.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                     Colud Security
+                    </h1>
+                    <p>
+                      migration security concultancy, cloud based system, cloud based infrastructure
+
+
+                      <div class="btn-box">
+                      <a href="" class="btn-1">
+                        Read More
+                      </a>
+                      <a href="#contact" class="btn-2">
+                        Contact Us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class=" col-lg-10 mx-auto">
+                      <div class="img-box">
+                        <img src="slider-img.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel_btn-box">
+          <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding" id="service">
+    <div class="container" >
+      <div class="heading_container heading_center" >
+        <h2>
+          Our Services
+        </h2>
+      </div>
+    </div>
+    <div class="container ">
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+          <div class="box ">
+          
+              <img src="pentesting.png" alt="" width="300px" height="210px">
+        
+            <div class="detail-box">
+              <h4>
+                Pentesting
+              </h4>
+              <p>
+                Penetration testers are security professionals skilled in the art of ethical hacking, which is the use of hacking tools 
+              </p>
+              <div class="dropdown-content d-none">
+                <p>
+                  and techniques to fix security weaknesses rather than cause harm. Companies hire pen testers to launch simulated attacks against their apps, networks, and other assets. By staging fake attacks, pen testers help security teams uncover critical security vulnerabilities and improve overall security posture
+                </p>
+              </div>
+              <a  class=" read-more-btn" onclick="toggleDropdown()">Read More</a>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="box ">
+            
+              <img src="thread-molting.png" alt="" width="300px" height="210">
+            
+            <div class="detail-box">
+              <h4>
+                Cyber Threat Monitoting
+              </h4>
+              <p>
+                Cyber threat hunting is a forward looking approach to internet security in which threat hunters proactively
+              </p>
+              <div class="drop-content" style="display: none;">
+                <p>
+                  search for security risks concealed within an organization’s network.
+                </p>
+              </div>
+              
+              <a class="read-more-bn" onclick="toggDropdown()">Read More</a>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 ">
+          <div class="box ">
+            
+              <img src="security-center.png" alt="" width="300px" height="210px">
+            
+            <div class="detail-box">
+              <h4>
+                Security Center
+              </h4>
+              <p>
+                Security Center is a centralized security management system that dynamically identifies and analyzes security threats,</p>
+                <div class="drop-contant" style="display: none;">
+                  <p>
+                    and generates alerts when threats are detected                  </p>
+                </div>
+             
+                <a class="read-more-b" onclick="togDropdown()">
+                Read More
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="box ">
+           
+              <img src="identifing.png" alt="" width="300px" height="210px"> 
+            
+            <div class="detail-box">
+              <h4>
+                Identifying Threats
+              </h4>
+              <p>
+                Threat detection and identification is the process by which persons who might present an insider threat
+              </p>
+              <div class="drop-contat" style="display: none;">
+                <p>
+                  risk due to their observable                </p>
+              </div>
+              <a class="read-mor-b" onclick="toDropdown()">
+                Read More
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="box ">
+            
+              <img src="security-assessment.png" alt="" width="300px" height="210px">
+            
+            <div class="detail-box">
+              <h4>
+                Cyber Risk Assessment
+              </h4>
+              <p>
+                Assume that a SQL injection attack might be classified as "Likely" or "Highly Likely" if the likelihood of the 
+              </p>
+              <div class="dropcontat" style="display: none;">
+                <p>
+                  attack is "Likely" or "Highly Likely."                </p>
+              </div>
+              <a class="read-morb" onclick="Dropdown()">
+                Read More
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="box ">
+            
+              <img src="cloud-manegment.jpg" alt="" width="300px" height="210px">
+           
+            <div class="detail-box">
+              <h4>
+                Managing Cloud Security
+              </h4>
+              <p>
+                migration security concultancy, cloud based system, cloud based infrastructure              </p>
+              <div class="drpcontat" style="display: none;">
+                <p>
+                  
+                </p>
+              </div>
+              <a  class="readmorb" onclick="Drpdown()" >
+                Read More
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding-bottom" id="about" style="margin-top: 20px;">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                About Us
+              </h2>
+            </div>
+            <p>
+              Welcome to our Cyber Security Services! We are dedicated to safeguarding your digital assets and sensitive information from cyber threats. Our expert team utilizes cutting-edge technologies and industry best practices to provide comprehensive solutions tailored to your specific needs. Rest easy knowing your organization is protected against evolving cyber risks with our reliable and proactive approach to security.</p>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img-box col-md-12">
+            <img  id="aboutimg" src="about1.jpg" alt="" >
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+
+  
+
+ 
+
+  <!-- contact section -->
+  <section class="contact_section layout_padding-bottom" >
+    <div class="container" id="contact">
+      <div class="heading_container heading_center">
+        <h2>
+          Get In Touch
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-lg-6 mx-auto">
+          <div class="form_container">
+            <form action="https://formsubmit.co/moazzamali2128@gmail.com" method="POST">
+              
+                <input type="text" name="name" placeholder="Your Name" />
+                              <input type="email" name="email" placeholder="Your Email" />
+              
+                              <input type="text" name="phone" placeholder="Your Phone" />
+                         
+                <input type="text" name="massege" class="message-box" placeholder="Message" />
+                          
+                <input style="background-color: rgb(250, 88, 24);" type="submit">
+            
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="info_contact">
+            <h4>
+              Address
+            </h4>
+            <div class="contact_link_box">
+              <a href="https://goo.gl/maps/oJjTLQWzqUaBh3ZGA" target="_blank">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Pakistan Lahore
+                </span>
+              </a>
+              <a href="Tel:+92 324 7298867">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +92 324 7298867
+                </span>
+              </a>
+              <a href="Mailto:moazzamali2128@gmail.com">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  moazzamali2128@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="info_social">
+            <a href="https://www.facebook.com/profile.php?id=100053663362085" target="_blank">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/syed-moazzam-ali-b80773281" target="_blank">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com/syed_moazzam_ali1/" target="_blank">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+       
+        <div class="col-md-4">
+          <div class="info_detail">
+            <h4>
+              CEO
+            </h4>
+            <p>
+              The CEO of compny is "SYED MOAZZAM ALI".  
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-0">
+          <h4>
+            Maps
+          </h4>
+       <div class="col-md-6 map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d857.1022835049943!2d74.28771349770979!3d31.533916648668107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1691178627671!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+       </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a>SYED MOAZZAM ALI</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- jQery -->
+  <script src="https://kit.fontawesome.com/e57ffa62ab.js" crossorigin="anonymous"></script>
+  <script src="jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="custom.js"></script>
+  <script>
+    function toggleDropdown() {
+      const dropdownContent = document.querySelector('.dropdown-content');
+      const readMoreBtn = document.querySelector('.read-more-btn');
+  
+      if (dropdownContent.classList.contains('d-none')) {
+        dropdownContent.classList.remove('d-none');
+        readMoreBtn.textContent = 'Read Less';
+      } else {
+        dropdownContent.classList.add('d-none');
+        readMoreBtn.textContent = 'Read More';
+      }
+    }
+    function toggDropdown() {
+  const dropdownContent = document.querySelector('.drop-content');
+  const readMoreBtn = document.querySelector('.read-more-bn');
+
+  if (dropdownContent.style.display === 'none') {
+    dropdownContent.style.display = 'block';
+    readMoreBtn.textContent = 'Read Less';
+  } else {
+    dropdownContent.style.display = 'none';
+    readMoreBtn.textContent = 'Read More';
+  }
+}
+function togDropdown() {
+  const dropdownContent = document.querySelector('.drop-contant');
+  const readMoreBtn = document.querySelector('.read-more-b');
+
+  if (dropdownContent.style.display === 'none') {
+    dropdownContent.style.display = 'block';
+    readMoreBtn.textContent = 'Read Less';
+  } else {
+    dropdownContent.style.display = 'none';
+    readMoreBtn.textContent = 'Read More';
+  }
+}
+function toDropdown() {
+  const dropdownContent = document.querySelector('.drop-contat');
+  const readMoreBtn = document.querySelector('.read-mor-b');
+
+  if (dropdownContent.style.display === 'none') {
+    dropdownContent.style.display = 'block';
+    readMoreBtn.textContent = 'Read Less';
+  } else {
+    dropdownContent.style.display = 'none';
+    readMoreBtn.textContent = 'Read More';
+  }
+}
+
+function Dropdown() {
+  const dropdownContent = document.querySelector('.dropcontat');
+  const readMoreBtn = document.querySelector('.read-morb');
+
+  if (dropdownContent.style.display === 'none') {
+    dropdownContent.style.display = 'block';
+    readMoreBtn.textContent = 'Read Less';
+  } else {
+    dropdownContent.style.display = 'none';
+    readMoreBtn.textContent = 'Read More';
+  }
+}
+    
+function Drpdown() {
+  const dropdownContent = document.querySelector('.drpcontat');
+  const readMoreBtn = document.querySelector('.readmorb');
+
+  if (dropdownContent.style.display === 'none') {
+    dropdownContent.style.display = 'block';
+    readMoreBtn.textContent = 'Read Less';
+  } else {
+    dropdownContent.style.display = 'none';
+    readMoreBtn.textContent = 'Read More';
+  }
+}
+// var loader = document.getElementById("preloder");
+
+//     window.addEventListener("load", function(){
+//       loader.style.display = "none";
+//     })
+    
+    var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 2000);
+}
+
+function showPage() {
+  document.getElementById("preloder").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+  </script>
+ 
+  
+
+
+</body>
+
+</html>
